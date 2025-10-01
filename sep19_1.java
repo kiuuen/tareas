@@ -16,7 +16,6 @@ public class sep19_1 {
             System.out.println("que ejercicio quieres ver a/b/c/d/e (o escribe x para terminar)");
             String eleccion = scanner.nextLine();
             eleccion = eleccion.toLowerCase();
-
             if (eleccion.equals("a")) {
                 System.out.println("detector de angulos rectos \n introduce los angulos del triangulo:");
                 double angulo = scanner.nextDouble();
@@ -27,7 +26,6 @@ public class sep19_1 {
                 }
                 scanner.nextLine();
             }
-
             if (eleccion.equals("b")) {
                 System.out.println("medidor de punto de ebullicion \n introduce los grados en celsius");
                 double grado = scanner.nextDouble();
@@ -39,7 +37,6 @@ public class sep19_1 {
                 }
                 scanner.nextLine();
             }
-
             if (eleccion.equals("c")) {
                 double totalpos = 0;
                 double totalneg = 0;
@@ -53,7 +50,6 @@ public class sep19_1 {
                 System.out.println("total positivos = " + totalpos + "  total negativos = " + totalneg);
                 scanner.nextLine();
             }
-
             if (eleccion.equals("d")) {
                 System.out.println("introduce el valor de x:");
                 double x = scanner.nextDouble();
@@ -68,7 +64,6 @@ public class sep19_1 {
                 System.out.println("no se puede calcular p");
                 scanner.nextLine();
             }
-
             if (eleccion.equals("e")) {
                 System.out.println("introduce la distancia:");
                 double distancia = scanner.nextDouble();
@@ -78,7 +73,6 @@ public class sep19_1 {
                 System.out.println("no se puede calcular el tiempo");
                 scanner.nextLine();
             }
-
             if (eleccion.equals("x")) {
                 seguir = false;
                 System.out.println("programa terminado");
@@ -86,3 +80,4 @@ public class sep19_1 {
         }
     }
 }
+// me complique de mas pero el if esta sencillo
