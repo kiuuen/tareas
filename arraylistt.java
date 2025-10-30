@@ -3,7 +3,6 @@
 //imprima la lista. Luego pida al usuario que introduzca un límite inferior y otro
 // superior, y luego debe de mostrar solo aquellos números que están dentro del límite
 //inferior y superior
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 public class arraylistt {
@@ -28,4 +27,5 @@ public class arraylistt {
         }
         System.out.println("Estos son los elementos que entran dentro del limite"+lista);
     }
+
 }
