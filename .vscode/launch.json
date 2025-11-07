@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "tareas_while_integradas",
+            "request": "launch",
+            "mainClass": "tareas_while_integradas",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
             "name": "oct_13_2",
             "request": "launch",
             "mainClass": "oct_13_2",
