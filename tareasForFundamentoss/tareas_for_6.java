@@ -7,7 +7,7 @@ public class tareas_for_6 {
         System.out.println("La suma es:");
         double resultado = 0;
         for (int n = 1;
-        n <= 20;
+        n <= 100000;
         n++) {
             double signo = Math.pow(-1,n/2);// elevo -1 a la n/2, eso para tener signos + - + - intercalados, y n/2 para deshacer lo que hago despues que es ir de 2 en 2, ahora voy de 1 en 1
             System.out.printf(" + (%.0f/%.0f)", (signo*4), (double)n); // paso n a double para poder usar el %.0f en los dos

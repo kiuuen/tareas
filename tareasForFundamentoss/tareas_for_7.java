@@ -12,9 +12,7 @@ public class tareas_for_7 {
         double factorial = 1.0; // empiezo el valor en 1 y no en 0 por lo mismo que uso luego += y *=
         double resultado = 1.0;
         System.out.print("e = 1");
-        for (int n = 1;
-        n <= limite;
-        n++) {
+        for (int n = 1; n <= limite; n++) {
             System.out.print(" + 1/"+n+"!");
             factorial *= n; // multiplicacion acumulativa de n, n veces, 1*1*2*3*4*5*6...*n (<=n)
             resultado += 1/factorial; // suma acumulativa de 1/factorial 

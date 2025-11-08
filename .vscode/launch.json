@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "nov_11_4",
+            "request": "launch",
+            "mainClass": "nov_11_4",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_11_3",
+            "request": "launch",
+            "mainClass": "nov_11_3",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_11_2",
+            "request": "launch",
+            "mainClass": "nov_11_2",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_11",
+            "request": "launch",
+            "mainClass": "nov_11",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "tareas_for_6",
+            "request": "launch",
+            "mainClass": "tareas_for_6",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
             "name": "tareas_while_integradas",
             "request": "launch",
             "mainClass": "tareas_while_integradas",
