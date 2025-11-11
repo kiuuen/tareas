@@ -22,12 +22,22 @@
  */
 
 #include <iostream>
-#include <string>
+#include <string> // para usar el std::string
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    std::cout << "Introduce tu edad" << '\n';
+    int edad;
+    std::cin >> edad;
+    std::cout << "Introduce tu nombre completo" << '\n';
+    std::string nombre;
+    std::cin.ignore();
+    std::getline(std::cin, nombre);
+    std::cout << "Introduce tu ciudad" << '\n';
+    std::string ciudad;
+    std::getline(std::cin, ciudad);
+    // aqui no ocupo pq es la ultima
+    std::cout << "Tu nombre es = " << nombre << '\n';
+    std::cout << "Tu edad es = " << edad << '\n';
+    std::cout << "Tu ciudad es = " << ciudad << '\n';
     return 0;
 }

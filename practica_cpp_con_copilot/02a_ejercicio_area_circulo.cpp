@@ -12,9 +12,13 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    std::cout << "Calculadora de area y perimetro" << '\n' << "Introduce el radio del circulo";
+    int radio;
+    std::cin >> radio;
+    double pi = 3.14159;
+    double area = pi * (static_cast<double>(radio)) * (static_cast<double>(radio));
+    double perimetro = 2 * pi * radio;
+    std::cout << '\n' << "El area es = " << area << " metros cuadrados";
+    std::cout << '\n' << "El perimetro es de = " << perimetro << " metros";
     return 0;
 }

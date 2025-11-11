@@ -14,9 +14,11 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    double celsius;
+    std::cout << "Introduce la temperatura en celsius";
+    std::cin >> celsius;
+    double conversionFahrenheit = celsius * 9/5 + 32;
+    double conversionKelvin = celsius + 273.15;
+    std::cout << "Eso quivale a = " << conversionFahrenheit << " fahrenheits y a = " << conversionKelvin << " kelvins";
     return 0;
 }

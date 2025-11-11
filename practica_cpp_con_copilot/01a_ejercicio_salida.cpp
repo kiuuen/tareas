@@ -13,9 +13,13 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
+    // standart library character out 
+    std::cout << "Daniel" << '\n'; // '\n' hace saltos de linea, concateno con <<
+    std::cout << "17" << '\n';
+    std::cout << "ola" << '\n';    
+    std::cout << "jaba" << '\n';    
+// bonus
+    std::cout << "Daniel" << '\n' << "17" << '\n' << "ola" << '\n' << "jaba" << '\n';
     
     return 0;
 }

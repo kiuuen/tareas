@@ -21,9 +21,15 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    std::cout << "Introduce el primer numero";
+    double numero1;
+    std::cin >> numero1;
+    std::cout << "Introduce el segundo numero";
+    double numero2;
+    std::cin >> numero2;
+    std::cout << "La suma da = " << (numero1 + numero2) << '\n';
+    std::cout << "La resta da = " << (numero1 - numero2) << '\n';
+    std::cout << "La multiplicacion da = " << (numero1*numero2) << '\n';
+    std::cout << "La division da = " << (numero1/numero2) << '\n';
     return 0;
 }
