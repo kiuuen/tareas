@@ -1,3 +1,5 @@
+Tareas que llevo durante la carrera y otros ejercicios de programación autodidactas
+
 ```text
 
                                               ██████████████████████████████
