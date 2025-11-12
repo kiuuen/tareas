@@ -17,11 +17,18 @@
  */
 
 #include <iostream>
-
+int total = 0;
 int main() {
-    // Escribe tu código aquí
-    
-    
+    std::cout << "Cuantos numeros desea sumar?: " << '\n';
+    int cantidad;
+    std::cin >> cantidad;
+    for (int n = 1;n <= cantidad; n++) {
+        std::cout << "Introduce el numero " << n << ": ";
+        int sumatoria;
+        std::cin >> sumatoria;
+        total += sumatoria;
+    }
+    std::cout << "La suma total es: " << total;
     
     return 0;
 }

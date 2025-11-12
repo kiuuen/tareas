@@ -16,9 +16,13 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    unsigned long long total = 1;
+    std::cout << "Introduce el numero N ";
+    int numero;
+    std::cin >> numero;
+    for (int l = 1; l <= numero; l++) {
+        total *= l;
+    }
+    std::cout << numero << "! = " << total << '\n';
     return 0;
 }

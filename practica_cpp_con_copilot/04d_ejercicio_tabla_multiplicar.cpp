@@ -19,9 +19,11 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    std::cout << "Tabla de multiplicar\nIntroduce el numero" << '\n';
+    int numero;
+    std::cin >> numero;
+    for (int n = 1; n <= 10; n++) {
+        std::cout << numero << " x " << n << " = " << numero*n << '\n';
+    }
     return 0;
 }

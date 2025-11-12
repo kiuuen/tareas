@@ -3,6 +3,55 @@
   "configurations": [
     {
       "type": "java",
+      "name": "nov_26_7_demostracion",
+      "request": "launch",
+      "mainClass": "nov_26_7_demostracion",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_6",
+      "request": "launch",
+      "mainClass": "nov_26_6",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_5",
+      "request": "launch",
+      "mainClass": "nov_26_5",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_4",
+      "request": "launch",
+      "mainClass": "nov_26_4",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_3",
+      "request": "launch",
+      "mainClass": "nov_26_3",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_2",
+      "request": "launch",
+      "mainClass": "nov_26_2",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_26_1",
+      "request": "launch",
+      "mainClass": "nov_26_1",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
       "name": "nov_11_4",
       "request": "launch",
       "mainClass": "nov_11_4",
