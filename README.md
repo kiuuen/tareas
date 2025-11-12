@@ -1,5 +1,8 @@
 Tareas que llevo durante la carrera y otros ejercicios de programación autodidactas
 
+- Mayormente java en el primer semestre, por mi cuenta c++
+- No me gusta java
+
 ```text
 
                                               ██████████████████████████████
