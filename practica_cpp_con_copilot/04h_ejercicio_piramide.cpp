@@ -22,9 +22,17 @@
 #include <iostream>
 
 int main() {
-    // Escribe tu código aquí
-    
-    
-    
+    std::cout << "Introduce la altura de la pirámide: ";
+    int altura;
+    std::cin >> altura;
+    for (int n = 1; n <= altura; n++) {
+        for (int m = 1; m <= altura-n; m++) {
+            std::cout << " ";
+        }
+        for (int p = 1; p <= 2*n-1; p++) { // el 2*n-1 es para que se vaya en impares, 1, 3 ,5, 7, 9....
+            std::cout << "*";
+        }
+        std::cout << '\n';
+    }
     return 0;
 }
