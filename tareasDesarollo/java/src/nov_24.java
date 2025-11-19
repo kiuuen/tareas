@@ -36,6 +36,28 @@ nombre, precio, stock. Una clase cliente con los datos generales del cliente
 Hora de venta, lista de productos seleccionados, y los demás datos que ustedes consideren. 
 Y crear una clase que tenga el método principal.
  */
+import java.util.Scanner;
+
+class Tienda {
+    private String Codigo;
+    private String Nombre;
+    Tienda(String Codigo, String Nombre) { // constructor
+    this.Codigo = Codigo;
+    this.Nombre = Nombre;
+    }
+}
+
+class Producto extends Tienda {
+    private int Precio;
+    private int Stock;
+    public Producto(String Codigo, String nombre, int Precio, int Stock) {
+        
+    }
+}
+
+class Cliente extends Tienda {
+}
+
 
 public class nov_24 {
 

@@ -14,7 +14,7 @@ class Triangulo { // hago la clase triangulo, con la base y altura privados para
     private double BaseTriangulo;
     private double AlturaTriangulo;
     public Triangulo(double base, double altura) { // hago un constructor de triangulo
-        if (base >= 0 && altura >= 0) {
+        if (base > 0 && altura > 0) {
             BaseTriangulo = base;
             AlturaTriangulo = altura;
         } else {
