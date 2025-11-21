@@ -37,28 +37,92 @@ Hora de venta, lista de productos seleccionados, y los demás datos que ustedes 
 Y crear una clase que tenga el método principal.
  */
 import java.util.Scanner;
+import java.util.HashMap;
+
+class HM {
+    static HashMap<String, Producto> InventarioProductos = new HashMap<String, Producto>();
+    static HashMap<String, Tienda> ListadoClientes = new HashMap<String, Tienda>();
+}
+
+public class nov_24 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int eleccion = sc.nextInt();
+        int menu = 0;
+        switch (menu) {
+            case 0:
+                System.out.println("Bienvenido al inventario de la tienda momichis\n\n1) Consultar todos los productos\n2) Registrar un nuevo producto\3) Vender un producto\n4) Ver registro de ventas\n5) Salir");
+                eleccion = menu;
+                break;
+            case 1:
+                System.out.println("Estos son los productos disponibles: ");
+                for (int n = 0; n <= HM.InventarioProductos.size(); n++) {
+                    
+                }
+                }
+        }
+    }
+}
 
 class Tienda {
     private String Codigo;
     private String Nombre;
-    Tienda(String Codigo, String Nombre) { // constructor
-    this.Codigo = Codigo;
-    this.Nombre = Nombre;
+    public Tienda(String Codigo, String Nombre) { // constructor
+        this.Codigo = Codigo;
+        this.Nombre = Nombre;
     }
 }
 
-class Producto extends Tienda {
-    private int Precio;
-    private int Stock;
-    public Producto(String Codigo, String nombre, int Precio, int Stock) {
-        
+class Producto extends Tienda {// Ambos extienden tienda comparten código y nombre
+    private int precio;
+    private int stock;
+    public Producto(String Codigo, String Nombre, int Precio, int Stock) {
+        super(Codigo, Nombre);
+        this.precio = Precio;
+        this.stock = Stock;
     }
+    public void registroProducto(String Codigo, String Nombre, int Precio, int Stock) {
+        try {
+            if (!Codigo.isEmpty() && !Nombre.isEmpty() && Precio > 0 && Stock > 0) {
+            Producto nuevoProducto = new Producto(Codigo, Nombre, Precio, Stock);
+            HM.InventarioProductos.put(Codigo, nuevoProducto);
+            System.out.println("Se ha agregado un nuevo producto:   Codigo  Nombre  Precio  Cantidad\n                  " + HM.InventarioProductos.get(Codigo));
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Introdujiste datos incorrectos vuelve a intentarlo");
+        }
+    }
+    public int getStock() {    
+        return stock;
+    }
+
 }
 
 class Cliente extends Tienda {
-}
+    private int horaVenta; // solo el cliente puede cambiar este atributo al hacer una compra
+    private int cantidad;
+    private String codigoProductoComprar;
+    public Cliente(String Codigo, String Nombre, int horaDeVenta) {
+        super(Codigo, Nombre);
+    }
+    public String validarCodigo(String Codigo) {
+        try {
+            for(String validar : HM.InventarioProductos.keySet()) {
+                if (validar.equals(Codigo)) {
+                    validar = Codigo; // detengo la busqueda
+                    codigoProductoComprar = Codigo; // ahora estamos trabajando sobre ese producto
+                }
+            }
+        } 
+    }
+    public void realizarVenta(String Codigo, int Cantidad) {
+        try {
+            if (HM.InventarioProductos.get(Codigo) != null && Cantidad <= ) {
 
+            }
+        }
+    }
 
-public class nov_24 {
-
+    
 }

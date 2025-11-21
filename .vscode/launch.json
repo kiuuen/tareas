@@ -3,6 +3,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "nov_29_5",
+      "request": "launch",
+      "mainClass": "nov_29_5",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_29_4",
+      "request": "launch",
+      "mainClass": "nov_29_4",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_29_3",
+      "request": "launch",
+      "mainClass": "nov_29_3",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_29_2",
+      "request": "launch",
+      "mainClass": "nov_29_2",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
+      "name": "nov_29",
+      "request": "launch",
+      "mainClass": "nov_29",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
       "name": "nov_19",
       "request": "launch",
       "mainClass": "nov_19",
