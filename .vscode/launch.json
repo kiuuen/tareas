@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "dic_4",
+      "request": "launch",
+      "mainClass": "dic_4",
+      "projectName": "GitHub_fb51dfc3"
+    },
+    {
+      "type": "java",
       "name": "dic_1",
       "request": "launch",
       "mainClass": "dic_1",
