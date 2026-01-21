@@ -18,9 +18,10 @@
 #include <algorithm>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::string cadena;
+    std::cout << "Introduce una cadena";
+    std::getline(std::cin, cadena);
+    std::reverse(cadena.begin(), cadena.end());
+    std::cout << cadena;
     return 0;
 }

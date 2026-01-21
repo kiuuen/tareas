@@ -22,15 +22,24 @@
 
 #include <iostream>
 
-// Prototipo
-
+bool esPrimo(int numero) {
+    for (int n = 2; n <= numero-1; n++) { // checo si es divisible, el numero, 1 y 0 siempre dan
+        if (numero % n == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    int numero;
+    std::cout << "Detector numeros primos\nIntroduce el numero";
+    std::cin >> numero;
+    if (esPrimo(numero) == true) {
+        std::cout << numero << " es primo";
+    } if (esPrimo(numero) == false) {
+        std::cout << numero <<  " no es primo";
+    }
     return 0;
 }
 
-// Definición

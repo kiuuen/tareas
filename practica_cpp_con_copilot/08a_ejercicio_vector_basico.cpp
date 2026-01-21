@@ -26,9 +26,24 @@
 #include <vector>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    int sumaLista = 0;
+    int tamañoLista = 0;
+    std::cout << "Cuantos numeros deseas introducir en la lista?" << std::endl; 
+
+    std::cin >> tamañoLista;
+    std::vector <int> lista; 
+    for (int n = 0; n < tamañoLista; n++) {
+        std::cout << "Introduce el " << (n+1) << " numero\n";
+        int numeroInput;
+        std::cin >> numeroInput;
+        lista.push_back(numeroInput);
+    }
+    std::cout << "Estos son todos los números: ";
+    for (int n = 0; n < tamañoLista; n++) {
+        std::cout << lista[n] << " ";
+        sumaLista += lista[n];
+    }
+    std::cout << "\nLa suma es = " << sumaLista;
+    std::cout << "\nEl promedio es = " << (sumaLista/tamañoLista) << "\n";
     return 0;
 }

@@ -17,17 +17,57 @@
  * Luego en main(), prueba las tres funciones con diferentes valores
  */
 
+#include <math.h>
 #include <iostream>
 
-// Declara tus funciones aquí (prototipos)
-
-
+int potencia(int base, int exponente) {
+    for (int n = 1; n <= exponente; n++) {
+        pow(base, exponente);
+    }
+}
+bool parImpar(int numero) {
+    if (numero % 2 != 0) {
+        return false;
+    }
+}
+int maximo(int numero1, int numero2) {
+    if (numero1 > numero2) {
+        return numero1;
+    } else {
+        return numero2;
+    }
+}
 int main() {
-    // Prueba tus funciones aquí
-    
-    
-    
+    std::cout << "Selecciona que función utilizar" << "\n" << "1) Potencia" << "\n" << "2) Detector impares" << "\n" << "3) Numero mayor";
+    int eleccion;
+    std::cin >> eleccion;
+    if (eleccion == 1) {
+        std::cout << "Introduce la base";
+        int base;
+        std::cin >> base;
+        std::cout << "Introduce el exponente";
+        int exponente;
+        std::cin >> exponente;
+        std::cout << "El resultado es: " << potencia(base, exponente);
+    }
+    if (eleccion == 2) {
+        std::cout << "Introduce el número";
+        int numero;
+        std::cin >> numero;
+        if (parImpar(numero) == false) {
+            std::cout << "El numero es impar";
+        } else {
+            std::cout << "El numero es par";
+        }
+    }
+    if (eleccion == 3) {
+        std::cout << "Introduce el primer numero";
+        int numero1;
+        std::cin >> numero1;
+        std::cout << "Introduce el segundo numero";
+        int numero2;
+        std::cin >>  numero2;
+        std::cout << "El numero mayor es" << maximo(numero1, numero2) << "\n";
+    }
     return 0;
 }
-
-// Define tus funciones aquí

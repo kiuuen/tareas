@@ -21,13 +21,23 @@
 
 #include <iostream>
 
-// Tu función aquí
+int listaFibonacci[13]; // 0 esta ocupado y empieza en 0 por eso 13
+int vueltas = 1;
 
+int fibonacci(int numeroActual) {
+    std::cout << ", " << numeroActual;
+    if (vueltas > 13) {
+        return 0;
+    }
+    vueltas++;
+    listaFibonacci[vueltas] = numeroActual;
+    int numeroSiguiente = numeroActual + listaFibonacci[vueltas-1]; // numero anterior
+    return fibonacci(numeroSiguiente);
+}
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::cout << "Primeros 15 numeros en secuencia fibonacci: 0";
+    listaFibonacci[0] = 0;
+    fibonacci(1);
     return 0;
 }

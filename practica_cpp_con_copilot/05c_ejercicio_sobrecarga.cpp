@@ -23,15 +23,39 @@
 
 #include <iostream>
 
-// Prototipos
-
-
+int maximo(int a, int b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+int maximo(int a, int b, int c) {
+    if (a > b && a > c) {
+        return a;
+    } if (b > c && b > a) {
+        return b;
+    } else {
+        return c;
+    }
+}
+double maximo(double a, double b) {
+    if (a > b) {
+        return a; 
+    } else {
+        return b;
+    }
+}
 int main() {
-    // Prueba las tres versiones
-    
-    
-    
+    double a;
+    double b;
+    double c;
+    std::cout << "Introduce a";
+    std::cin >> a;
+    std::cout << "Introduce b";
+    std::cin >> b;
+    std::cout << "Introduce c";
+    std::cin >> c;
+    std::cout << "Maximo 1) int " << int(maximo(a, b)) << "\nMaximo 2) doubles " << maximo(a, b) << "\nMaximo 3) a b y c " << maximo(a, b, c);
     return 0;
 }
-
-// Definiciones

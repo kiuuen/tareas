@@ -19,13 +19,18 @@
 
 #include <iostream>
 
-// Tu función aquí
+int sumarDigitos(int numero) {
+    if (numero == 0) {
+        return 0;
+    }
+    return (numero % 10) + sumarDigitos((numero / 10)); // residuo se va ir sumando solo con cada return
+    // si es 123, / 10 = 12.3, el residuo de eso es 3. Como es int va a quedar en 12, y el ultimo digito (residuos) 3 separados
+}
 
-
-int main() {
-    // Tu código aquí
-    
-    
-    
+int main() { 
+    std::cout << "Introduce los numeros, para sumar sus digitos: ";
+    int numeros;
+    std::cin >> numeros;
+    std::cout << "La suma de sus digitos es: " << sumarDigitos(numeros);
     return 0;
 }

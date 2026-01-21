@@ -25,15 +25,20 @@
 
 #include <iostream>
 
-// Prototipos
-
-
+void incrementarPorValor(int numeroOriginal) {
+    numeroOriginal++;
+}
+void incrementarPorReferencia(int& numeroOriginal) {
+    numeroOriginal++;
+}
 int main() {
-    // Tu código aquí
-    
-    
-    
+    int numero;
+    std::cout << "Introduce el número ";
+    std::cin >> numero;
+    incrementarPorValor(numero);
+    std::cout << "Numero original: " << numero << "\nPasado por valor es " << numero;
+    incrementarPorReferencia(numero);
+    std::cout << "\nPor referencia ahora vale: " << numero;    
     return 0;
 }
 
-// Definiciones

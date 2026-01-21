@@ -19,9 +19,17 @@
 #include <algorithm>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::string cadena;
+    std::cout << "Introduce una/s palabra/s para contar vocales: ";
+    std::getline(std::cin, cadena);
+    std::string tolower(std::string cadena);
+    int contador = 0;
+    for (size_t n = 0; n <= cadena.size(); n++) {
+        char primero = cadena[n];
+        if (primero == 'a' || primero == 'e' || primero == 'i' || primero == 'o' || primero == 'u') {
+            contador++;
+        }
+    }
+    std::cout << "Tiene " << contador << " vocales";
     return 0;
 }

@@ -65,3 +65,9 @@ Este documento no es formal: es una lista clara y práctica de los conceptos y h
 - Lectura/escritura de archivos (File I/O) y manipulación de streams.
 - Tests unitarios en Java (JUnit) y diseño de programas más modulares.
 - Estructuras de datos avanzadas y algoritmos básicos (ordenamiento, búsqueda, complejidad).
+
+## Temas recientes (resumen)
+- Serialización y persistencia: ideas clave (usar `Serializable`, declarar `serialVersionUID`, y marcar con `transient` los recursos no serializables) y el uso básico de `ObjectOutputStream`/`ObjectInputStream` para guardar/cargar estado.
+- Buenas prácticas: usar colecciones tipadas (por ejemplo `ArrayList<Venta>`), diseñar clases de dominio pequeñas y evitar serializar campos `static` salvo que se gestione explícitamente su persistencia.
+- Depuración y mantenimiento: inspeccionar stack traces para localizar `NotSerializableException`, limpiar archivos `.class` y borrar archivos de datos antiguos (`.dat`) si cambió la estructura de clases para evitar errores de compatibilidad.
+- Flujo práctico recomendado: diseñar clases serializables, probar guardar y cargar en ciclos cortos (crear producto, registrar venta, guardar, reiniciar y cargar) y documentar cambios en el formato de persistencia.

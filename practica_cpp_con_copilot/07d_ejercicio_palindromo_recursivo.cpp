@@ -21,14 +21,32 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-
-// Tu función aquí
-
-
+#include <cctype>
+std::string copiaPalabra;
+bool esPalindromo(const std::string& palabra, size_t posStart = 0, size_t posEnd = std::string::npos) {
+    if (posEnd == std::string::npos) {
+        posEnd = palabra.size(); // esto solo se hace la primera vez!
+        copiaPalabra = palabra;
+        std::transform(copiaPalabra.begin(), copiaPalabra.end(), copiaPalabra.begin(),
+        [](unsigned char c) {
+        return std::tolower(c); });
+    }
+    if (copiaPalabra[posStart] != copiaPalabra[posEnd -1]) { // empieza n de 0, el ultimo character es en su size -1 
+        return false;
+    }
+    if (posStart >= posEnd) {
+        return true;
+    }
+    return esPalindromo(palabra, posStart + 1, posEnd - 1);
+}
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::string palabra;
+    std::cout << "Introduce la palabra a detectar: ";
+    std::cin >> palabra;
+    if (esPalindromo(palabra) == false) {
+        std::cout << "No es palindromo" << std::endl;
+    } else {
+        std::cout << "Es palindromo" << std::endl;
+    }
     return 0;
 }

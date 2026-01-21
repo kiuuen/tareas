@@ -18,7 +18,7 @@
 int main() {
     unsigned long long total = 1;
     std::cout << "Introduce el numero N ";
-    int numero;
+    int numero; 
     std::cin >> numero;
     for (int l = 1; l <= numero; l++) {
         total *= l;

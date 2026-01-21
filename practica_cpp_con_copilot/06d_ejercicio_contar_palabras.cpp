@@ -17,9 +17,15 @@
 #include <string>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::string cadena;
+    int contarEspacios = 1; // empieza en 1 porque la primera palabra no tiene espacio
+    std::cout << "Introduce una frase: ";
+    std::getline(std::cin, cadena);
+    for (size_t n = 0; n <= cadena.size(); n++) {
+        if (cadena[n] == (' ')) {
+            contarEspacios++;
+        }
+    }
+    std::cout << "La frase tiene" << contarEspacios << " palabras";
     return 0;
 }

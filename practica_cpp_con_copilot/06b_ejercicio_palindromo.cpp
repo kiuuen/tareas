@@ -20,10 +20,22 @@
 #include <string>
 #include <algorithm>
 
+std::string detectorPalindromos(std::string palabra) {
+    size_t pos1 = 0;
+    size_t pos2 = palabra.size() - 1;
+    while (pos1 < pos2) {
+        if (palabra[pos1] != palabra[pos2]) {
+            return "No es palindromo";
+        }
+        pos1++;
+        --pos2;
+    }
+    return "Es palindromo";
+}
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::cout << "Detector palindromos, introduce la palabra: ";
+    std::string palabra;
+    std::cin >> palabra;
+    std::cout << detectorPalindromos(palabra);
     return 0;
 }
