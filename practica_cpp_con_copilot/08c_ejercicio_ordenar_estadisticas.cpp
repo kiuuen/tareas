@@ -25,9 +25,30 @@
 #include <algorithm>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::cout << "Cuantos números deseas introducir?: " << "\n";
+    size_t n;
+    std::cin >> n;
+    int tamano;
+    int mediana;
+    std::vector<int> vectorUsuario(n); // reservo un vector de tamaño n (dado por usuario), con todos los elementos 0 por ahora
+    for (size_t i = 0; i < vectorUsuario.size(); i++) {
+        int valorVectorTemp;
+        std::cout << (i+1) << ") Introduce el valor: ";
+        std::cin >> valorVectorTemp;
+        vectorUsuario[i] = valorVectorTemp;
+        mediana += valorVectorTemp;
+        tamano++;
+    }    
+    std::cout << "Original: ";
+    for (size_t m = 0; m < vectorUsuario.size(); m++) {
+        std::cout << vectorUsuario[m];
+    }
+    std::cout << "\nOrdenado min/max: ";
+    std::sort(vectorUsuario.begin(), vectorUsuario.end());
+    for (size_t l = 0; l < vectorUsuario.size(); l++) {
+        std::cout << vectorUsuario[l];
+    }
+    std::cout << "Minimo: " << vectorUsuario.front() << "\nMaximo: " << vectorUsuario.back();
+    std::cout << "\nMediana: " << (mediana/tamano);
     return 0;
 }

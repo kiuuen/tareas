@@ -25,9 +25,23 @@
 #include <string>
 
 int main() {
-    // Tu código aquí
-    
-    
-    
+    std::cout << "Introduce una cadena de texto: ";
+    std::string cadena;
+    std::getline(std::cin, cadena);
+    std::unordered_map<char, int> numLetras;
+    for (char caracteres : cadena) {
+        if (std::isspace(static_cast<unsigned char>(caracteres))) {
+            continue; 
+        }
+        numLetras[caracteres]++;
+        // pasamos caracter a caracter la cadena
+        // "hola" seria 'h' 'o' 'l' 'a'
+        // si h no existe, el operator[] crea ['h', 0] y luego el incremento ++ a ['h', 1]
+        // es decir, va contando!
+    }
+    std::cout << "Frecuencia letras\n";
+    for (const auto& contador : numLetras) {
+    std::cout << contador.first << " aparece: " << contador.second << " veces\n";
+    }
     return 0;
 }

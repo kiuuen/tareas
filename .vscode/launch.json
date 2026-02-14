@@ -1,87 +1,98 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "java",
-      "name": "dic_4",
-      "request": "launch",
-      "mainClass": "dic_4",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "dic_1",
-      "request": "launch",
-      "mainClass": "dic_1",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_29_5",
-      "request": "launch",
-      "mainClass": "nov_29_5",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_29_4",
-      "request": "launch",
-      "mainClass": "nov_29_4",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_29_3",
-      "request": "launch",
-      "mainClass": "nov_29_3",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_29_2",
-      "request": "launch",
-      "mainClass": "nov_29_2",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_29",
-      "request": "launch",
-      "mainClass": "nov_29",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_19",
-      "request": "launch",
-      "mainClass": "nov_19",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "type": "java",
-      "name": "nov_15",
-      "request": "launch",
-      "mainClass": "nov_15",
-      "projectName": "GitHub_fb51dfc3"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/kiuuen/Documents/GitHub/practica_cpp_con_copilot",
-      "program": "c:/Users/kiuuen/Documents/GitHub/practica_cpp_con_copilot/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
+    "version": "0.2.0",
+    "configurations": [
         {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
+            "type": "java",
+            "name": "dic_4",
+            "request": "launch",
+            "mainClass": "dic_4",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "dic_1",
+            "request": "launch",
+            "mainClass": "dic_1",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_29_5",
+            "request": "launch",
+            "mainClass": "nov_29_5",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_29_4",
+            "request": "launch",
+            "mainClass": "nov_29_4",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_29_3",
+            "request": "launch",
+            "mainClass": "nov_29_3",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_29_2",
+            "request": "launch",
+            "mainClass": "nov_29_2",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_29",
+            "request": "launch",
+            "mainClass": "nov_29",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_19",
+            "request": "launch",
+            "mainClass": "nov_19",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "type": "java",
+            "name": "nov_15",
+            "request": "launch",
+            "mainClass": "nov_15",
+            "projectName": "GitHub_fb51dfc3"
+        },
+        {
+            "name": "C/C++ Runner: Debug Session",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "externalConsole": true,
+            "cwd": "c:/Users/kiuuen/Documents/GitHub/practica_cpp_con_copilot",
+            "program": "c:/Users/kiuuen/Documents/GitHub/practica_cpp_con_copilot/build/Debug/outDebug",
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
         }
-      ]
-    }
-  ]
+    ]
 }
