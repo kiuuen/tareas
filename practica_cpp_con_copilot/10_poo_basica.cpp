@@ -39,7 +39,7 @@
  * 
  * 4. DESTRUCTORES (¡NO EXISTEN EN JAVA!):
  *    En C++ no hay garbage collector, así que las clases tienen destructores
- *    que se llaman automáticamente cuando el objeto se destruye
+ *    que se llaman automáticamente cuando el objeto se destruye_
  *    
  *    ~Persona() {
  *        // Liberar recursos si es necesario

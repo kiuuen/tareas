@@ -27,18 +27,50 @@
  * Promedio: 8.33
  * Estado: APROBADO
  */
-
 #include <iostream>
 #include <vector>
 #include <string>
 #include <numeric>  // para accumulate
-
-// TODO: Define la clase Estudiante aquí
-
+class Estudiante {
+    private:
+        std::string nombre;
+        int matricula;
+        std::string carrera;
+        std::vector<double> calificaciones;
+    public:
+        void agregarCalificacion(double calificacionInput) {
+            if (calificacionInput > -1 && calificacionInput < 11) {
+                this->calificaciones.push_back(calificacionInput);
+            }
+        }
+        double calcularPromedio(const std::vector<double>& calificacionesInput) {
+            if (calificacionesInput.empty()) {return 0.0;} 
+            double suma = std::accumulate(calificacionesInput.begin(), calificacionesInput.end(), 0.0);
+            return suma/calificacionesInput.size();
+        }
+        std::string verEstado() { // no un getter realmente
+            if (calcularPromedio(this->calificaciones) < 6.0) {
+                return "REPROBADO";
+            } else {
+                return "APROBADO";
+            }
+        }
+        void mostrarInfo() { // no ocupo poner el objeto de parametro al ser un metodo que ya tiene él mismo
+            std::cout << "---Info estudiante---\nNombre: " << this->nombre << "\nMatricula: " << this->matricula << "\nCarrera: " << this->carrera << "\nCalificaciones: ";
+            for(const double& contador : this->calificaciones) {
+                std::cout << contador << "\n";
+            }
+            std::cout << "\nPromedio: " << calcularPromedio(this->calificaciones) << "\nEstado: " << verEstado() << std::endl;
+        }
+        Estudiante(std::string nombreConstructor = "estudiante", int matriculaConstructor = 0, std::string carreraConstructor = "sincarrera") : nombre(nombreConstructor), matricula(matriculaConstructor), carrera(carreraConstructor) {}
+    };
 int main() {
-    
-    
-    
-    
+    Estudiante est1("Daniel", 225209204, "ISI");
+    est1.agregarCalificacion(5);
+    est1.agregarCalificacion(10);
+    est1.agregarCalificacion(8);
+    est1.agregarCalificacion(5.6);
+    est1.agregarCalificacion(10);
+    est1.mostrarInfo();
     return 0;
 }
