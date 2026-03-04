@@ -22,14 +22,30 @@
 
 #include <iostream>
 
-// TODO: Define la clase Rectangulo aquí
+class Rectangulo {
+    private:
+        int base;
+        int altura;
+    public:
+        int getBase() {
+            return this->base;
+        }
+        int getAltura() {
+            return this->altura;
+        }
+    Rectangulo(int baseW = 1, int alturaW = 1) : base(baseW), altura(alturaW){};
+    friend void escalar(Rectangulo& rectangulo, int factor);
+};
 
-// TODO: Implementa la función escalar aquí
+void escalar(Rectangulo& rectangulo, int factor) {
+    rectangulo.altura *= factor;
+    rectangulo.base *= factor;
+}
 
 int main() {
-    
-    
-    
-    
+    Rectangulo rec1(10, 5);
+    std::cout << "El rectangulo ahora mide: " << rec1.getBase() << " x " << rec1.getAltura() << std::endl;
+    escalar(rec1, 10);
+    std::cout << "El rectangulo ahora mide: " << rec1.getBase() << " x " << rec1.getAltura() << std::endl;
     return 0;
 }

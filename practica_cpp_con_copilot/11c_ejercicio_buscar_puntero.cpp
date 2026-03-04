@@ -24,13 +24,29 @@
 
 #include <iostream>
 #include <vector>
-
-// TODO: Implementa la función buscar aquí
-
+#include <algorithm>
+int* buscar(std::vector<int>& vector, int valorBuscar) {
+    auto it = std::find(vector.begin(), vector.end(), valorBuscar);
+    if (it != vector.end()) {
+        std::cout << "\nValor: " << *it << " encontrado" << std::endl;
+        return &(*it);
+    }
+    else {
+        std::cout << "No se encontro el valor" << std::endl;
+        return nullptr;
+    }
+} 
 int main() {
-    
-    
-    
-    
+    std::vector<int> vectorNumeros = {10, 2, 5, 8};
+    std::cout << "El vector es: ";
+    for (int& v : vectorNumeros) {
+        std::cout << v << ", ";
+    }
+    int* ptr = buscar(vectorNumeros, 8);
+    *ptr = 999; 
+    std::cout << "\nEl vector es: ";
+    for (int& v : vectorNumeros) {
+        std::cout << v << ", ";
+    }
     return 0;
 }

@@ -22,12 +22,19 @@
 
 #include <iostream>
 
-// TODO: Implementa la función intercambiar aquí
-
+void intercambiar(int& A, int& B) {
+    int c = A; // variable temporal
+    A = B;
+    B = c;
+    // Se modifican los parametros  A y B, que al ser por referencia, modifican el a,b que le damos después
+    std::cout << "\nSe intercambiaron a y b" << std::endl;
+}
+ 
 int main() {
-    
-    
-    
-    
+    int a = 10;
+    int b = 20;
+    std::cout << "El valor de a es: " << a << "\nEl valor de b es: " << b << std::endl;
+    intercambiar(a, b);
+    std::cout << "El valor de a es: " << a << "\nEl valor de b es: " << b << std::endl;
     return 0;
 }
