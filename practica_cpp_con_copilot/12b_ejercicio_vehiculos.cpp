@@ -62,18 +62,100 @@
 #include <string>
 #include <iomanip>
 
-// TODO: Define la clase abstracta Vehiculo aquí
-
-// TODO: Define Auto aquí
-
-// TODO: Define Moto aquí
-
-// TODO: Define Camion aquí
-
+class Vehiculo {
+    protected:
+        std::string marca;
+        std::string modelo;
+        int ano;
+        double precio;
+    public:
+        virtual double calcularImpuesto() = 0;
+        virtual std::string mostrarInfo() = 0;
+        virtual double getPrecio() {
+            return this->precio;
+        }
+    Vehiculo(std::string marcaW = "Sin marca", std::string modeloW = "Sin modelo", int anoW = 0, double precioW = 0) : marca(marcaW), modelo(modeloW), ano(anoW), precio(precioW){};
+    virtual ~Vehiculo() {
+            std::cout << "\nSe destruyo un objeto vehiculo";
+        }
+};
+class Auto : public Vehiculo {
+    protected:
+        int numeroPuertas;
+    public:
+        double calcularImpuesto() override {
+            return this->precio* 0.15;
+        }
+        std::string mostrarInfo() override {
+            return "\nMarca: " + this->marca
+            + "\nModelo: " + this->modelo
+            + "\nAno: " + std::to_string(this->ano)
+            + "\nPuertas: " + std::to_string(this->numeroPuertas)
+            + "\nPrecio:" + std::to_string(this->precio)
+            + "\nPrecio con impuestos: " + std::to_string(this->precio + calcularImpuesto());
+         }
+    Auto(std::string marcaW, std::string modeloW, int anoW, double precioW, int numPuertasW = 0)
+        : Vehiculo(marcaW, modeloW, anoW, precioW), numeroPuertas(numPuertasW){};
+};
+class Moto : public Vehiculo {
+    protected:
+        int cilindrada;
+    public:
+        double calcularImpuesto() override {
+            return this->precio * 0.10;
+        }
+        std::string mostrarInfo() override {
+            return "\nMarca: " + this->marca
+            + "\nModelo: " + this->modelo
+            + "\nAno: " + std::to_string(this->ano)
+            + "\nCilindros: " + std::to_string(this->cilindrada)
+            + "\nPrecio:" + std::to_string(this->precio)
+            + "\nPrecio con impuestos: " + std::to_string(this->precio + calcularImpuesto());
+         }
+    Moto(std::string marcaW, std::string modeloW, int anoW, double precioW, int cilindradaW = 0)
+        : Vehiculo(marcaW, modeloW, anoW, precioW), cilindrada(cilindradaW){};
+};
+class Camion : public Vehiculo {
+    protected:
+        int capacidadCarga;
+        int ejes;
+    public:
+        double calcularImpuesto() override {
+            return this->precio * 0.20;
+        }
+        std::string mostrarInfo() override {
+            return "\nMarca: " + this->marca
+            + "\nModelo: " + this->modelo
+            + "\nAno: " + std::to_string(this->ano)
+            + "\nCapacidad carga: " + std::to_string(this->capacidadCarga)
+            + "\nEjes: " + std::to_string(this->ejes)
+            + "\nPrecio:" + std::to_string(this->precio)
+            + "\nPrecio con impuestos: " + std::to_string(this->precio + calcularImpuesto());
+        }
+    Camion(std::string marcaW, std::string modeloW, int anoW, double precioW, int capacidadCargaW = 0, int ejesW = 0)
+        : Vehiculo(marcaW, modeloW, anoW, precioW), capacidadCarga(capacidadCargaW), ejes(ejesW){};
+};
 int main() {
-    
-    
-    
-    
+    std::vector<Vehiculo*> listaVehiculos;
+    listaVehiculos.push_back(new Auto("BMW", "C", 2010, 30000, 4));
+    listaVehiculos.push_back(new Moto("Suzuki", "ninja", 1999, 60000, 300));
+    listaVehiculos.push_back(new Camion("Trailer", "Continental", 2020, 120000, 1000, 8));
+    std::cout << "Consesionaria momichis!!\n----Lista vehiculos----" << std::endl;
+    double totalImpuestos = 0.0;
+    Vehiculo* vehiculoCaro = nullptr;
+    for (Vehiculo* vehiculo : listaVehiculos) {
+        vehiculo->calcularImpuesto();
+        std::cout << vehiculo->mostrarInfo() << "\n--------";
+        totalImpuestos += vehiculo->calcularImpuesto();
+        if (vehiculoCaro == nullptr || vehiculoCaro->getPrecio() < vehiculo->getPrecio()) {
+            vehiculoCaro = vehiculo;
+        }
+    }
+    std::cout << "\nResumen vehiculos---------\nTotal vehiculos: " << listaVehiculos.size()
+    << "\nTotal impuestos: " << totalImpuestos
+    << "\nVehiculo mas caro: " << vehiculoCaro->mostrarInfo();
+    for (Vehiculo* vehiculo : listaVehiculos) {
+        delete vehiculo;
+    }
     return 0;
 }
