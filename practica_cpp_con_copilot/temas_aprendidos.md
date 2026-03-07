@@ -205,6 +205,138 @@ Este documento rastrea tu progreso de Java/Python → C++, enfocándote en POO p
 - Tests unitarios en Java (JUnit) y diseño de programas más modulares.
 - Estructuras de datos avanzadas y algoritmos básicos (ordenamiento, búsqueda, complejidad).
 
+---
+
+## 📚 PARTE 3: Algoritmos y Estructuras de Datos (preparación competitiva)
+
+Sección de ejercicios para prepararte en algoritmos, desde lo básico hasta problemas estilo LeetCode/Codeforces/HackerRank. Cada tema tiene un archivo de teoría con ejemplos funcionales y ejercicios vacíos con instrucciones detalladas.
+
+### Tema 14 — Complejidad Algorítmica (Big O)
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `14_complejidad_algoritmica.cpp` | Teoría: O(1), O(n), O(n²), O(log n), medición con chrono | 📖 |
+| `14a_ejercicio_medir_tiempo.cpp` | Comparar O(n²) vs O(n) para detectar duplicados | ⬜ |
+| `14b_ejercicio_comparar_busquedas.cpp` | Búsqueda lineal vs binaria con conteo de operaciones | ⬜ |
+
+### Tema 15 — Algoritmos de Ordenamiento
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `15_ordenamiento.cpp` | Teoría: tabla comparativa, merge sort completo | 📖 |
+| `15a_ejercicio_bubble_sort.cpp` | Implementar bubble sort con optimización | ⬜ |
+| `15b_ejercicio_selection_sort.cpp` | Implementar selection sort | ⬜ |
+| `15c_ejercicio_insertion_sort.cpp` | Implementar insertion sort | ⬜ |
+| `15d_ejercicio_merge_sort.cpp` | Implementar merge sort (divide & conquer) | ⬜ |
+| `15e_ejercicio_quick_sort.cpp` | Implementar quick sort (Lomuto partition) | ⬜ |
+| `15f_ejercicio_ordenar_colores.cpp` | Dutch National Flag / LeetCode #75 | ⬜ |
+
+### Tema 16 — Búsqueda
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `16_busqueda.cpp` | Teoría: binary search, lower_bound, STL | 📖 |
+| `16a_ejercicio_busqueda_binaria.cpp` | Implementar búsqueda binaria con contador | ⬜ |
+| `16b_ejercicio_primera_ultima.cpp` | Primera/última ocurrencia / LeetCode #34 | ⬜ |
+| `16c_ejercicio_encontrar_pico.cpp` | Find Peak Element / LeetCode #162 | ⬜ |
+| `16d_ejercicio_raiz_cuadrada.cpp` | Sqrt(x) con binary search / LeetCode #69 | ⬜ |
+
+### Tema 17 — Pilas y Colas
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `17_pilas_colas.cpp` | Teoría: stack, queue, priority_queue, deque | 📖 |
+| `17a_ejercicio_pila_vector.cpp` | Implementar pila custom con vector | ⬜ |
+| `17b_ejercicio_parentesis_validos.cpp` | Valid Parentheses / LeetCode #20 | ⬜ |
+| `17c_ejercicio_cola_dos_pilas.cpp` | Queue con dos stacks / LeetCode #232 | ⬜ |
+| `17d_ejercicio_min_stack.cpp` | Min Stack / LeetCode #155 | ⬜ |
+| `17e_ejercicio_calculadora_postfija.cpp` | Calculadora postfija (Reverse Polish) | ⬜ |
+
+### Tema 18 — Listas Enlazadas
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `18_listas_enlazadas.cpp` | Teoría: Nodo, insertar, imprimir, liberar | 📖 |
+| `18a_ejercicio_lista_completa.cpp` | Clase LinkedList completa | ⬜ |
+| `18b_ejercicio_invertir_lista.cpp` | Reverse Linked List / LeetCode #206 | ⬜ |
+| `18c_ejercicio_detectar_ciclo.cpp` | Floyd's cycle detection / LeetCode #141 | ⬜ |
+| `18d_ejercicio_merge_listas.cpp` | Merge Two Sorted Lists / LeetCode #21 | ⬜ |
+| `18e_ejercicio_nodo_medio.cpp` | Middle of Linked List / LeetCode #876 | ⬜ |
+
+### Tema 19 — Árboles Binarios
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `19_arboles.cpp` | Teoría: NodoArbol, recorridos, altura, BFS | 📖 |
+| `19a_ejercicio_recorridos.cpp` | Inorder, preorder, postorder, level order | ⬜ |
+| `19b_ejercicio_altura_arbol.cpp` | Max depth + contar nodos / LeetCode #104 | ⬜ |
+| `19c_ejercicio_arbol_simetrico.cpp` | Symmetric Tree / LeetCode #101 | ⬜ |
+| `19d_ejercicio_bst.cpp` | BST: insertar y buscar | ⬜ |
+| `19e_ejercicio_validar_bst.cpp` | Validate BST / LeetCode #98 | ⬜ |
+
+### Tema 20 — Programación Dinámica
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `20_programacion_dinamica.cpp` | Teoría: top-down, bottom-up, patrones DP | 📖 |
+| `20a_ejercicio_fibonacci_memo.cpp` | Fibonacci: recursivo vs memo vs tabulation | ⬜ |
+| `20b_ejercicio_subir_escaleras.cpp` | Climbing Stairs / LeetCode #70 | ⬜ |
+| `20c_ejercicio_max_subarray.cpp` | Kadane's / Maximum Subarray / LeetCode #53 | ⬜ |
+| `20d_ejercicio_mochila.cpp` | 0/1 Knapsack Problem | ⬜ |
+| `20e_ejercicio_lcs.cpp` | Longest Common Subsequence / LeetCode #1143 | ⬜ |
+| `20f_ejercicio_cambio_monedas.cpp` | Coin Change / LeetCode #322 | ⬜ |
+
+### Tema 21 — Grafos
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `21_grafos.cpp` | Teoría: representación, BFS, DFS | 📖 |
+| `21a_ejercicio_representar_grafo.cpp` | Lista de adyacencia + grados | ⬜ |
+| `21b_ejercicio_bfs_camino.cpp` | BFS camino más corto sin pesos | ⬜ |
+| `21c_ejercicio_dfs_componentes.cpp` | DFS componentes conexas | ⬜ |
+| `21d_ejercicio_detectar_ciclo_grafo.cpp` | Detectar ciclo en grafo dirigido | ⬜ |
+| `21e_ejercicio_dijkstra.cpp` | Dijkstra camino más corto con pesos | ⬜ |
+
+### Tema 22 — Greedy y Backtracking
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `22_greedy_backtracking.cpp` | Teoría: greedy pattern, backtracking template | 📖 |
+| `22a_ejercicio_actividades.cpp` | Activity Selection (greedy clásico) | ⬜ |
+| `22b_ejercicio_monedas_greedy.cpp` | Greedy vs DP para cambio de monedas | ⬜ |
+| `22c_ejercicio_permutaciones.cpp` | Generar permutaciones / LeetCode #46 | ⬜ |
+| `22d_ejercicio_n_reinas.cpp` | N-Queens (backtracking clásico) | ⬜ |
+| `22e_ejercicio_sudoku.cpp` | Sudoku Solver (backtracking) | ⬜ |
+
+### Tema 23 — Two Pointers y Sliding Window
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `23_two_pointers_sliding_window.cpp` | Teoría: two pointers, sliding window patterns | 📖 |
+| `23a_ejercicio_two_sum.cpp` | Two Sum / LeetCode #1 (3 soluciones) | ⬜ |
+| `23b_ejercicio_contenedor_agua.cpp` | Container With Most Water / LeetCode #11 | ⬜ |
+| `23c_ejercicio_subcadena_sin_repetir.cpp` | Longest Substring Without Repeating / LC #3 | ⬜ |
+| `23d_ejercicio_tres_suma.cpp` | 3Sum / LeetCode #15 | ⬜ |
+| `23e_ejercicio_suma_ventana.cpp` | Suma máxima de ventana fija de tamaño k | ⬜ |
+
+### Tema 24 — Problemas de Práctica Competitiva
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `24a_ejercicio_fizzbuzz.cpp` | FizzBuzz (clásico de entrevistas) | ⬜ |
+| `24b_ejercicio_numeros_romanos.cpp` | Romano ↔ Entero | ⬜ |
+| `24c_ejercicio_anagramas.cpp` | Anagramas + agrupar / LeetCode #49 | ⬜ |
+| `24d_ejercicio_spiral_matrix.cpp` | Spiral Matrix / LeetCode #54 | ⬜ |
+| `24e_ejercicio_merge_intervals.cpp` | Merge Intervals / LeetCode #56 | ⬜ |
+| `24f_ejercicio_palindromo_largo.cpp` | Longest Palindromic Substring / LC #5 | ⬜ |
+
+### Resumen de la sección de algoritmos
+| Tema | Teoría | Ejercicios | Total archivos |
+|------|--------|------------|----------------|
+| 14. Complejidad | 1 | 2 | 3 |
+| 15. Ordenamiento | 1 | 6 | 7 |
+| 16. Búsqueda | 1 | 4 | 5 |
+| 17. Pilas y Colas | 1 | 5 | 6 |
+| 18. Listas Enlazadas | 1 | 5 | 6 |
+| 19. Árboles | 1 | 5 | 6 |
+| 20. Prog. Dinámica | 1 | 6 | 7 |
+| 21. Grafos | 1 | 5 | 6 |
+| 22. Greedy/Backtracking | 1 | 5 | 6 |
+| 23. Two Pointers/SW | 1 | 5 | 6 |
+| 24. Práctica Competitiva | 0 | 6 | 6 |
+| **TOTAL** | **10** | **54** | **64** |
+
+Leyenda: 📖 = archivo de teoría (para leer/estudiar), ⬜ = pendiente, ✅ = completado
+
 ## Temas recientes (resumen)
 - Serialización y persistencia: ideas clave (usar `Serializable`, declarar `serialVersionUID`, y marcar con `transient` los recursos no serializables) y el uso básico de `ObjectOutputStream`/`ObjectInputStream` para guardar/cargar estado.
 - Buenas prácticas: usar colecciones tipadas (por ejemplo `ArrayList<Venta>`), diseñar clases de dominio pequeñas y evitar serializar campos `static` salvo que se gestione explícitamente su persistencia.

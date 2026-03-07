@@ -1,0 +1,11 @@
+Analisis del archivo 'intro.txt'
+Lineas: 15
+Palabras: 298
+Caracteres (total): 1538
+Caracteres (sin espacios): 1313
+5 palabras mas frecuentes: 
+'his' aparece: 12 veces
+'the' aparece: 11 veces
+'to' aparece: 11 veces
+'a' aparece: 8 veces
+'and' aparece: 7 veces
