@@ -36,3 +36,63 @@
  */
 
 // Tu código aquí
+
+#include <iostream>
+#include <vector>
+#include <chrono>
+
+int busquedaLineal(std::vector<int>& v, int target, int &comparacion) {
+    for (size_t n = 0; n < v.size(); n++) {
+        comparacion++;
+        if (static_cast<int>(n) == target) {
+            return static_cast<int>(n);
+        }
+    }
+    std::cout << "No encontrado" << std::endl;
+    return -1; // no encontrado
+}
+
+int busquedaBinaria(std::vector<int>& v, int target, int &comparacion) {
+    int izq = 0;
+    int der = static_cast<int>(v.size())-1;
+    comparacion++;
+    while (izq <= der) {
+    comparacion++;
+    int mid = izq + (der - izq)/2;
+        if (v[mid] == target) {
+            return mid+1;
+        }
+        if (v[mid] < target) {
+            izq = mid + 1;
+        }
+        if (v[mid] > target) {
+            der = mid - 1;
+        }
+    }
+    std::cout << "No encontrado" << std::endl;
+    return -1;
+}
+int main () {  
+    int comparacionesLineal = 0;
+    auto inicio = std::chrono::high_resolution_clock::now();
+    auto fin = std::chrono::high_resolution_clock::now();
+    auto duracion = std::chrono::duration_cast<std::chrono::microseconds>(fin - inicio);
+    int comparacionesBinario = 0;
+    std::vector<int> vectorNumeros;
+    for (int n = 1; n < 10000001; n++) {
+        vectorNumeros.push_back(n);
+    }
+
+    std::cout << "\nBuscando 9,999,998\n";
+    inicio = std::chrono::high_resolution_clock::now();
+    std::cout<< "\nBusqueda lineal: Encontrado en indice: " << busquedaLineal(vectorNumeros, 9999998, comparacionesLineal) << ", comparaciones: " << comparacionesLineal << std::endl;
+    fin = std::chrono::high_resolution_clock::now();
+    auto duracionTemp = std::chrono::duration_cast<std::chrono::microseconds>(fin - inicio);
+    inicio = std::chrono::high_resolution_clock::now();
+    std::cout << "\nBusqueda binaria: Encontrado en indice: " << busquedaBinaria(vectorNumeros, 9999998, comparacionesBinario) << ", comparaciones: " << comparacionesBinario << std::endl;
+    fin = std::chrono::high_resolution_clock::now();
+    duracion = std::chrono::duration_cast<std::chrono::microseconds>(fin - inicio);
+    std::cout << "\nTiempo lineal: " << duracionTemp.count() << " microsegundos"
+    << "\nTiempo binario: " << duracion.count() << " microsegundos"
+    << "\nDiferencia en veces lineal/binario: " << (static_cast<int>(duracionTemp.count()))/(static_cast<int>(duracion.count())) << " veces mas rapido" << std::endl;
+}

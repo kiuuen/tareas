@@ -33,3 +33,32 @@
  */
 
 // Tu código aquí
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void selectionSort(std::vector<int>& v) {
+    for (int i = 1; i < static_cast<int>(v.size()); i++) {
+        if (i == 1) {
+            std::cout << "\nOriginal: ";
+            for (int in : v) {
+                std::cout << in << " ";
+            }
+        }
+        int clave = v[i];
+        int j = i - 1;
+        while (j >= 0 && v[j] > clave) { // todos los elementos mayores a el segundo elemento
+            v[j] = v[j+1];
+            j--;
+        }
+        v[j+1] = clave; // pongo el segundo elemento en el primer espacio (siguiente iteracion: el tercer elemento será el segundo elemento)
+        std::cout << "\nInsertar " << clave << ": ";
+        for (int in : v) {
+            std::cout << in << " ";
+        } 
+    }
+}
+int main() {
+    std::vector<int> vectorNumeros{12, 11, 13, 5, 6};
+    selectionSort(vectorNumeros);
+}

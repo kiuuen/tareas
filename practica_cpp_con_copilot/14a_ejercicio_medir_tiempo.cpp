@@ -39,3 +39,52 @@
  */
 
 // Tu código aquí
+#include <chrono>
+#include <vector>
+#include <unordered_set>
+#include <iostream>
+#include <cstdlib>
+
+std::string tieneDuplicados_ON2 (std::vector<int>& vector) {
+    for (size_t n = 0; n < vector.size(); n++) {
+        for (size_t m = n+1; m < vector.size(); m++) {
+            if (vector.at(n) == vector.at(m)) {
+                return "Resultado: tiene duplicados";
+            }
+        }
+    }
+    return "Resultado: no tiene duplicados";
+}
+std::string tieneDuplicados_ON(std::vector<int>& vector) {
+    std::unordered_set<int> setNumeros;
+    for (const int& i : vector) {
+        if (!setNumeros.insert(i).second) {
+            return "Resultado: tiene duplicados";
+        }
+    }
+    return "Resultado: no tiene duplicados";
+}
+int main() {
+    auto inicio = std::chrono::high_resolution_clock::now();
+    auto fin = std::chrono::high_resolution_clock::now();
+    auto duracion = std::chrono::duration_cast<std::chrono::milliseconds>(fin - inicio);
+    std::vector<int> listaNumeros;
+    // int numRand;
+    for (int n = 1; n < 30001; n++) {
+        // numRand = rand() % 100001;
+        listaNumeros.push_back(n);
+    }
+    std::cout << "Vector de 30,000 de elementos generado" << std::endl;
+    inicio = std::chrono::high_resolution_clock::now();
+    std::cout << tieneDuplicados_ON2(listaNumeros) << std::endl;
+    fin = std::chrono::high_resolution_clock::now();
+    duracion = std::chrono::duration_cast<std::chrono::milliseconds>(fin - inicio);
+    auto duracionTemp = duracion;
+    std::cout << "O(n^2) fuerza bruta tarda: " << duracion.count() << " milisegundos" << std::endl;
+    inicio = std::chrono::high_resolution_clock::now();
+    std::cout << tieneDuplicados_ON(listaNumeros) << std::endl;
+    fin = std::chrono::high_resolution_clock::now();
+    duracion = std::chrono::duration_cast<std::chrono::milliseconds>(fin - inicio);
+    std::cout << "O(n) usando hash set tarda: " << duracion.count() << " milisegundos" << std::endl;
+    std::cout << "O(n) es mas rapido que O(n^2) por: " << static_cast<int>(duracionTemp.count())/static_cast<int>(duracion.count()) << "x veces" << std::endl;
+}

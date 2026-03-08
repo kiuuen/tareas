@@ -32,3 +32,41 @@
  */
 
 // Tu código aquí
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void selectionSort(std::vector<int>& v) {
+    int indiceMinimo;
+    for (int n = 0; n < static_cast<int>(v.size())-1; n++) {
+        indiceMinimo = n;
+        if (n == 0) { 
+            std::cout << "Original: ";
+            for (int e : v) {
+                std::cout << e << " ";
+            } 
+        }
+        for (int m = n+1; m < static_cast<int>(v.size()); ++m) {
+            if (v[m] < v[indiceMinimo]) {
+                indiceMinimo = m;
+            }
+        }
+        int valorMinimo = v[indiceMinimo];
+        std::swap(v[n], v[indiceMinimo]);  
+        std::cout << "\nPaso " << n+1
+        << ", minimo = " << valorMinimo
+        << " (pos " << indiceMinimo << " -> " << n << "), resultado swapeado: ";
+        for (int e : v) {
+                std::cout << e << " ";
+            }
+    }
+    std::cout << "\nResultado ordenado: ";
+        for (int e : v) {
+                std::cout << e << " ";
+    }
+}
+
+int main() {
+    std::vector<int> vectorNumeros{29, 10, 14, 37, 13};
+    selectionSort(vectorNumeros);
+}
