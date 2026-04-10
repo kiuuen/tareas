@@ -38,25 +38,29 @@
 #include <algorithm>
 
 void selectionSort(std::vector<int>& v) {
-    for (int i = 1; i < static_cast<int>(v.size()); i++) {
+    for (int i = 1; i < static_cast<int>(v.size()); ++i) {
+        int clave = v[i];
+        int j = i - 1;
         if (i == 1) {
             std::cout << "\nOriginal: ";
             for (int in : v) {
                 std::cout << in << " ";
             }
         }
-        int clave = v[i];
-        int j = i - 1;
-        while (j >= 0 && v[j] > clave) { // todos los elementos mayores a el segundo elemento
-            v[j] = v[j+1];
+        while (j >= 0 && v[j] > clave) {
+            v[j+1] = v[j]; // muevo un elemento a la derecha
             j--;
         }
-        v[j+1] = clave; // pongo el segundo elemento en el primer espacio (siguiente iteracion: el tercer elemento será el segundo elemento)
+        v[j+1] = clave;
         std::cout << "\nInsertar " << clave << ": ";
         for (int in : v) {
             std::cout << in << " ";
         } 
     }
+    std::cout << "\nVector ordenado: ";
+        for (int in : v) {
+        std::cout << in << " ";
+        }
 }
 int main() {
     std::vector<int> vectorNumeros{12, 11, 13, 5, 6};

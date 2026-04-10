@@ -3,34 +3,63 @@
  * 
  * TAREA:
  * Implementa búsqueda binaria desde cero (sin usar std::binary_search).
- * 
- * 1. Crea una función int busquedaBinaria(vector<int>& v, int target):
- *    - Inicializa izq = 0, der = v.size() - 1
- *    - Mientras izq <= der:
- *      * mid = izq + (der - izq) / 2
- *      * Si v[mid] == target → retorna mid
- *      * Si v[mid] < target → izq = mid + 1
- *      * Si v[mid] > target → der = mid - 1
- *    - Si no lo encontró, retorna -1
- * 
- * 2. En main():
- *    - Crea un vector ordenado: {2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91}
- *    - Busca varios valores: 23 (existe), 72 (existe), 15 (no existe)
- *    - Para cada búsqueda, muestra cuántas comparaciones hizo
- * 
- * PISTA:
- * - Usa un contador de comparaciones dentro de la función
- * - Puedes retornar un pair<int,int> con {índice, comparaciones}
- *   o pasar el contador por referencia
+ * Dado un vector ORDENADO y un target, retorna su índice o -1 si no existe.
+ * Incluye un contador de comparaciones para analizar la eficiencia.
  * 
  * EJEMPLO DE SALIDA:
  * Vector: 2 5 8 12 16 23 38 45 56 72 91
- * 
  * Buscar 23: encontrado en índice 5 (3 comparaciones)
  * Buscar 72: encontrado en índice 9 (4 comparaciones)
- * Buscar 15: NO encontrado (-1) (4 comparaciones)
- * 
- * Máximo teórico de comparaciones: log2(11) ≈ 4
+ * Buscar 15: NO encontrado (4 comparaciones)
  */
 
-// Tu código aquí
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <chrono>
+#include <cstdlib>
+// intento de hacerlo en ingles
+int binarySearch(std::vector<int>& vector, int key, int& att) {
+    size_t start = 0;
+    size_t end = vector.size() - 1;
+    size_t mid = start + (end - start) / 2;
+    while (start <= end) {
+        mid = start + (end - start) / 2;
+        if (vector[mid] == key) {
+            att++;
+            return static_cast<int>(mid); // index where its allocated
+        }
+        else if (key > vector[mid]) {
+            att++;
+            start = mid + 1;
+            continue;
+        } 
+        else {
+            att++;
+            end = mid - 1;
+            continue;
+        }
+    }
+    return -1;
+}
+int main() {
+    auto inicio = std::chrono::high_resolution_clock::now();
+    auto fin = std::chrono::high_resolution_clock::now();
+    auto duracion = std::chrono::duration_cast<std::chrono::microseconds>(fin - inicio);
+    std::vector<int> vectorNumbers;
+    for (int n = 1; n < 100000001; n++) {
+        vectorNumbers.push_back(n);
+    }
+    int key = 10000000;
+    int numAtt = 0;
+    inicio = std::chrono::high_resolution_clock::now();
+    int answ = binarySearch(vectorNumbers, key, numAtt);
+    fin = std::chrono::high_resolution_clock::now();
+    if (answ == -1) {
+        std::cout << "\n" << key << " wasnt found in the arr, attemps: " << numAtt << std::endl;
+    } else {
+        std::cout << "\n" << key << " was found in the arr, index: " << answ << ", attempts: " << numAtt << std::endl;
+    }   
+    duracion = std::chrono::duration_cast<std::chrono::microseconds>(fin - inicio);
+    std::cout << "Total duration " << duracion.count() << " microseconds" << std::endl;
+}

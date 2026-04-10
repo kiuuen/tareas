@@ -1,36 +1,51 @@
 /*
- * EJERCICIO 16C: Encontrar pico en montaña (Problema estilo LeetCode #162)
+ * EJERCICIO 16C: Encontrar elemento pico (Estilo LeetCode #162)
  * 
  * TAREA:
- * Un "elemento pico" es aquel que es MAYOR que sus vecinos.
- * Dado un vector donde v[i] != v[i+1] (no hay elementos iguales adyacentes),
- * encuentra UN pico usando búsqueda binaria en O(log n).
+ * Un "elemento pico" es aquel mayor que sus vecinos inmediatos.
+ * Dado un vector donde no hay elementos iguales adyacentes,
+ * encuentra cualquier pico usando búsqueda binaria en O(log n).
  * 
- * Crea una función int encontrarPico(vector<int>& v):
- *   - Si v[mid] > v[mid+1]: el pico está a la izquierda (o es mid)
- *     → der = mid
- *   - Si v[mid] < v[mid+1]: el pico está a la derecha
- *     → izq = mid + 1
- *   - Cuando izq == der, encontraste el pico
- * 
- * ¿POR QUÉ FUNCIONA?
- * Imagina una montaña: si estás subiendo (v[mid] < v[mid+1]), 
- * el pico está adelante. Si estás bajando, el pico está atrás.
- * 
- * EJEMPLO:
- * Entrada: [1, 3, 5, 4, 2]
- * Salida: índice 2 (valor 5 es pico: 5 > 3 y 5 > 4)
- * 
- * Entrada: [1, 2, 1, 3, 5, 6, 4]
- * Salida: índice 1 o índice 5 (ambas son válidas, cualquier pico sirve)
- * 
- * Entrada: [3, 2, 1]
- * Salida: índice 0 (el primer elemento puede ser pico si v[0] > v[1])
- * 
- * PISTAS:
- * - Tratar los bordes del vector como -infinito
- * - izq = 0, der = v.size() - 1
- * - No necesitas comparar con ambos vecinos, solo con mid+1 basta
+ * EJEMPLOS:
+ * Entrada: [1, 3, 5, 4, 2]    → índice 2 (valor 5)
+ * Entrada: [1, 2, 3, 4, 5]    → índice 4 (valor 5)
+ * Entrada: [3, 2, 1]          → índice 0 (valor 3)
  */
 
 // Tu código aquí
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int findPickElement(const std::vector<int> vector) {
+    int start = 0;
+    int end = vector.size() - 1;
+    int mid = start + (end - start)/2;
+    while (start <= end) {
+        int mid = start + (end - start)/2;
+        if (vector[mid] > vector[mid+1] && vector[mid] > vector[mid-1]) {
+            return mid;
+        }
+        else if (vector[mid+1] > vector[mid]) {
+            start = mid + 1;
+        } else {
+            end = mid;
+        }
+    }
+    return -1;
+}
+int main() {
+    std::vector<int> vectorNum{1, 3, 5, 4, 2, 5, 6, 7, 8, 9, 11, 2, 99, 101, 23};
+    std::cout << "original vec: ";
+    for (int v : vectorNum) {
+        std::cout << v << " ";
+    }
+    int mid = findPickElement(vectorNum);
+    if (mid == -1) {
+        std::cout << "\ntheres no pick element" << std::endl;
+        return 0;
+    }
+    std::cout << "\npick element: " << vectorNum[mid] << " at index: " << mid; 
+    return 0;
+}

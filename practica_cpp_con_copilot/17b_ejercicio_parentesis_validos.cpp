@@ -1,37 +1,50 @@
 /*
- * EJERCICIO 17B: Paréntesis válidos (Problema estilo LeetCode #20)
+ * EJERCICIO 17B: Paréntesis válidos (Estilo LeetCode #20)
  * 
  * TAREA:
- * Dada una cadena que contiene solo los caracteres '(', ')', '{', '}', '[', ']',
- * determina si la cadena tiene paréntesis válidos (bien balanceados).
+ * Dada una cadena con solo '(', ')', '{', '}', '[', ']',
+ * determina si los paréntesis están correctamente balanceados.
  * 
- * Reglas:
- * - Cada paréntesis de apertura debe cerrarse con el mismo tipo
- * - Los paréntesis deben cerrarse en el orden correcto
- * - Cada cierre debe tener su apertura correspondiente
- * 
- * Crea una función bool esValido(string s) usando una PILA:
- *   - Recorre cada carácter:
- *     * Si es apertura ('(', '{', '['): push a la pila
- *     * Si es cierre (')', '}', ']'):
- *       - Si la pila está vacía → false (no hay apertura)
- *       - Si el tope NO coincide con el cierre → false
- *       - Si coincide → pop
- *   - Al final: retorna true si la pila está vacía
- * 
- * EJEMPLO:
+ * EJEMPLOS:
  * "()"       → true
  * "()[]{}"   → true
  * "(]"       → false
- * "([)]"     → false (cierre en orden incorrecto)
- * "{[]}"     → true  (anidados correctamente)
- * ""         → true  (cadena vacía es válida)
- * "((("      → false (aperturas sin cierre)
- * ")))"      → false (cierres sin apertura)
- * 
- * PISTA:
- * - Usa un map para emparejar: ')' → '(', ']' → '[', '}' → '{'
- * - O usa if/else para cada caso
+ * "([)]"     → false
+ * "{[]}"     → true
+ * "((("      → false
  */
 
 // Tu código aquí
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <stack>
+#include <sstream>
+
+bool pilaParentesis(std::string cadena) {
+    std::stack<std::string> pila;
+    std::istringstream iss(cadena);
+    std::vector<std::string> chars;
+    std::string palabras;
+    while (iss >> palabras) {
+        chars.push_back(palabras);
+    }
+    for (std::string s : chars) {
+        if (s == "(" || s == "{" || s == "[") {
+            pila.push(s);
+            std::cout << "\nSe agrego " << s << " a la pila" << std::endl;
+        } else {
+            if (!pila.empty()) {
+                pila.pop();
+                std::cout << "\nSe elimino " << s << "  la pila" << std::endl;
+            }
+        }
+    }
+    return pila.empty();
+}
+int main() {
+    std::string cadena;
+    std::cout << "Introduce una cadena de parentesis: " << std::endl;
+    std::getline(std::cin, cadena);
+    std::cout << "La cadena" << (pilaParentesis(cadena) ? " esta balanceada" : " no esta balanceada")  << std::endl;
+}

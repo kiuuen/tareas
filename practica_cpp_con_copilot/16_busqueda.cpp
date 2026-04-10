@@ -16,7 +16,7 @@
  *    Divide el espacio de búsqueda a la mitad cada iteración.
  *    
  *    Ejemplo: Buscar 7 en [1, 3, 5, 7, 9, 11, 13]
- *    - izq=0, der=6, mid=3 → v[3]=7 → ¡ENCONTRADO!
+ *    - izq=0, der=6, mid=3 → v[3]=7     → ¡ENCONTRADO!
  *    
  *    Ejemplo: Buscar 9 en [1, 3, 5, 7, 9, 11, 13]
  *    - izq=0, der=6, mid=3 → v[3]=7 < 9 → izq=4
