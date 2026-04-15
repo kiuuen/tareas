@@ -64,16 +64,16 @@ node* mergeList(node* nodeInput1, node* nodeInput2) {
     } // creates a unordered list, only to work with the size
     node* temp = sortList;
     while (list1 != nullptr && list2 != nullptr) {
-        if (list1->n <= list2->n) { // list1 is bigger
+        if (list1->n <= list2->n) { // list2 is bigger
             temp->nextNode = list1;
             list1 = list1->nextNode;
-        } else { // list2 is bigger
+        } else { // list1 is bigger
             temp->nextNode = list2;
             list2 = list2->nextNode;
         }
         temp = temp->nextNode;
     }
-    if (list1 != nullptr) {
+    if (list1 != nullptr) { // only cause there are a element left after the while
         temp->nextNode = list1;
     } else if (list2 != nullptr) {
         temp->nextNode = list2;

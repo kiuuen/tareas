@@ -12,6 +12,9 @@
  *       / \   \
  *      4   5   6      ← hojas (no tienen hijos)
  *    
+ *     
+ *    4 2 5 1 3 6
+ *
  *    Terminología:
  *    - Raíz: nodo sin padre (el de arriba)
  *    - Hoja: nodo sin hijos (los de abajo)
