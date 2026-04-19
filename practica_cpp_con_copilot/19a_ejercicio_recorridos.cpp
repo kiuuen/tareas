@@ -57,13 +57,6 @@ class binaryTree {
             }
             
         }
-
-    /*    INORDER (izq → raíz → der):  4 2 5 1 3 6  ← Para BST: da orden SORTED
-    *    PREORDER (raíz → izq → der): 1 2 4 5 3 6  ← Útil para copiar/serializar
-    *    POSTORDER (izq → der → raíz): 4 5 2 6 3 1 ← Útil para eliminar/evaluar
-    *    
-    *    LEVEL ORDER (BFS por niveles): 1 2 3 4 5 6 ← Usa una cola (queue)*/
-
     void inOrder(std::vector<int> &output, nodeTree* root) { 
         if (root == nullptr) { 
             return;
@@ -80,6 +73,33 @@ class binaryTree {
         preOrder(output, root->leftSon);
         preOrder(output, root->rightSon);
     }
+    void postOrder(std::vector<int> &output, nodeTree* root) { 
+        if (root == nullptr) { 
+            return;
+        }
+        preOrder(output, root->leftSon);
+        preOrder(output, root->rightSon);
+        output.push_back(root->value);
+    }
+    void levelOrder(std::vector<int> &output, nodeTree* root) { // so its the same as my queue
+        if (root == nullptr) { 
+            return;
+        }
+        std::queue<nodeTree*> queueOrder;
+        nodeTree* current = nullptr;
+        queueOrder.push(root); // the root first
+        while (!queueOrder.empty()) {
+            current = queueOrder.front();
+            output.push_back(current->value);
+            queueOrder.pop();
+            if (current->leftSon != nullptr) {
+                queueOrder.push(current->leftSon);
+            }
+            if (current->rightSon != nullptr) {
+                queueOrder.push(current->rightSon);
+            }
+        }
+    }
     binaryTree() : tree(nullptr) {} ;
 };
 
@@ -92,18 +112,26 @@ int main() {
     binaryTree binaryTree;
     binaryTree.push(10);
     binaryTree.push(20);
+    binaryTree.push(20);
     binaryTree.push(30);
     binaryTree.push(40);
-    binaryTree.push(60);
-    binaryTree.push(70);
-    binaryTree.push(80);
+    binaryTree.push(40);
+    binaryTree.push(30);
     std::vector<int> inOrderOutput;
     std::vector<int> preOrderOutput;
+    std::vector<int> postOrderOutput;
+    std::vector<int> levelOrderOutput;
     std::cout << "in order: ";
     binaryTree.inOrder(inOrderOutput, binaryTree.tree);
     printOrder(inOrderOutput);
     std::cout << "\npre order: ";
     binaryTree.preOrder(preOrderOutput, binaryTree.tree);
     printOrder(preOrderOutput);
+    std::cout << "\npost order: ";
+    binaryTree.postOrder(postOrderOutput, binaryTree.tree);
+    printOrder(postOrderOutput);
+    std::cout << "\nlevel order: ";
+    binaryTree.levelOrder(levelOrderOutput, binaryTree.tree);
+    printOrder(levelOrderOutput);
     return 0;
 }
