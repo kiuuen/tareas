@@ -16,3 +16,22 @@
  */
 
 // Tu código aquí
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int steps(int N) { // so its just fibonacci cause ask for 1-2 steps
+    std::vector<int> dp(N+1);
+    dp[1] = 1; dp[2] = 2;
+    for (int i = 3; i <= N; i++) {
+        dp[i] = dp[i-1] + dp[i-2]; // + dp[i-3] with 3 steps
+    }
+    return dp[N];
+
+}
+int main() {
+    int number = 10;
+    std::cout << "steps required for " << number << " steps: " << steps(number) << std::endl;
+    return 0;
+}
