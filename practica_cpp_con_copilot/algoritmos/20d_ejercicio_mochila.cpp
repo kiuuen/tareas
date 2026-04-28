@@ -19,29 +19,18 @@
 #include <vector>
 
 std::pair<std::vector<std::pair<int, int>>,int> maxValue(std::vector<std::pair<int,int>> objects, const int& weight) {
-    // first weight, second value
-    // so every object is a pair weight-value, in a vector of objects with a maximum weight
     int size = objects.size();
-    std::vector<std::pair<int,int>> max;
-    std::pair<std::pair<int,int>, int> tempMax;
-    int total = 0;
-    int totalWeight = 0;
-    int totalMax = 0;
-    for (int i = 0; i < size; i++) {
-        if (tempMax.second <= weight && objects[i].first <= weight) {
-            totalWeight += objects[i].first;
-            tempMax = std::pair(std::pair(objects[i].first, objects[i].second), totalWeight);
-            total += objects[i].second;
-        }
-        if (total > totalMax) {
-            totalMax = total;
-            max.push_back(tempMax.first);
-            total = 0;
-        }
+    std::vector<std::vector<int>> dp(size+1, std::vector<int>(weight+1, 0));
+    // matrix with rows = objects, cols = weights, and [row][col] = value
+    for (int obj = 1; obj < size; obj++) {
+       for (int w = 0; w <= weight; w++) {
+            dp[obj][w] = dp[obj-1][w];
+            if (objects[obj-1].first <= w) {
+                dp[obj][w] = std::max(dp[obj][w], objects[obj-1].second + dp[obj-1][w - objects[obj-1].first]);
+            }
+       }
     }
-    return std::pair(max, totalMax);
 }
-
 int main() {
     std::vector<std::pair<int,int>> objects{std::pair(1, 1), std::pair(3,4), std::pair(4,5), std::pair(5,7)};
     std::pair<std::vector<std::pair<int,int>>,int> max = maxValue(objects, 7);

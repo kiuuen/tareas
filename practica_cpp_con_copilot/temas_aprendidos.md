@@ -55,6 +55,8 @@ Este documento rastrea tu progreso de Java/Python → C++, enfocándote en POO p
 
 ## 🚀 PARTE 2: C++ (Progreso Actual)
 
+Ubicacion de archivos C++: carpeta cpp/
+
 ### ✅ Temas 01-09: Completados
 - Sintaxis básica, tipos, operadores → traducción de Java
 - Entrada/salida: `cin`, `cout`, `getline`
@@ -141,13 +143,63 @@ Este documento rastrea tu progreso de Java/Python → C++, enfocándote en POO p
 - ⏳ `13b_ejercicio_agenda_archivo.cpp` - Por hacer
 - ⏳ `13c_ejercicio_analizador_texto.cpp` - Por hacer
 
+### Tema 14: STL y algoritmos (C++ idiomatico)
+**Estado:** Teoria lista, 2 ejercicios pendientes
+
+**Aprendido:**
+- `<algorithm>`: sort, find_if, count_if, transform, copy_if
+- `<numeric>`: accumulate
+- Lambdas para filtrar y transformar
+
+**Archivos:**
+- ✓ `14_stl_algoritmos.cpp` - Teoria con ejemplos
+- ⏳ `14a_ejercicio_filtrar_transform.cpp` - Filtrar, transformar y sumar
+- ⏳ `14b_ejercicio_estadisticas_stl.cpp` - Min, max, promedio y mediana
+
+### Tema 15: Excepciones y manejo de errores (NUEVO)
+**Estado:** Teoria lista, 2 ejercicios pendientes
+
+**Aprendido:**
+- try/catch y throw
+- std::exception, invalid_argument, runtime_error
+- Validacion de entrada y errores comunes
+
+**Archivos:**
+- ✓ `15_excepciones.cpp` - Teoria con ejemplos
+- ⏳ `15a_ejercicio_division_segura.cpp` - Division con errores controlados
+- ⏳ `15b_ejercicio_archivo_seguro.cpp` - Lectura con manejo de errores
+
+### Tema 16: Templates y genericos (NUEVO)
+**Estado:** Teoria lista, 2 ejercicios pendientes
+
+**Aprendido:**
+- Funciones template
+- Clases template
+- Codigo reutilizable para multiples tipos
+
+**Archivos:**
+- ✓ `16_templates.cpp` - Teoria con ejemplos
+- ⏳ `16a_ejercicio_maximo_template.cpp` - Maximo generico
+- ⏳ `16b_ejercicio_par_template.cpp` - Clase Par<T1, T2>
+
+### Tema 17: Sobrecarga de operadores (NUEVO)
+**Estado:** Teoria lista, 1 ejercicio pendiente
+
+**Aprendido:**
+- Sobrecarga de operadores +, -, << para clases propias
+- Buenas practicas para funciones libres
+
+**Archivos:**
+- ✓ `17_sobrecarga_operadores.cpp` - Teoria con ejemplos
+- ⏳ `17a_ejercicio_fraccion.cpp` - Fracciones con operadores
+
 ---
 
 ## 📊 Estadísticas Generales
 
-**Total de archivos de teoría C++:** 13 (todos con ejemplos ejecutables)
+**Total de archivos de teoría C++:** 17 (todos con ejemplos ejecutables)
 **Ejercicios completados:** ~20 (temas 01-09)
-**Ejercicios pendientes:** 14 (temas 10-13)
+**Ejercicios pendientes:** 21 (temas 10-17)
 **Enfoque del semestre:** POO (temas 10, 11, 12)
 
 ---
@@ -183,10 +235,11 @@ Este documento rastrea tu progreso de Java/Python → C++, enfocándote en POO p
 3. **Resolver ejercicios 11a-11c:** Punteros y referencias
 4. **Resolver ejercicios 12a-12d:** ⭐ HERENCIA (más importante para el semestre)
 5. **Resolver ejercicios 13a-13c:** Archivos
+6. **Resolver ejercicios 14-17:** STL, excepciones, templates y operadores
 
 ---
 
-**Última actualización:** Con temas 10-13 enfocados en POO (herencia, polimorfismo, clases abstractas)
+**Última actualización:** Con temas 10-17 enfocados en POO y C++ intermedio
 - Uso de nombres descriptivos para variables (`cadenaInput`, `totalVocales`).
 
 ## Errores y lecciones comunes que ya viste
@@ -208,6 +261,8 @@ Este documento rastrea tu progreso de Java/Python → C++, enfocándote en POO p
 ---
 
 ## 📚 PARTE 3: Algoritmos y Estructuras de Datos (preparación competitiva)
+
+Ubicacion de archivos de algoritmos: carpeta algoritmos/
 
 Sección de ejercicios para prepararte en algoritmos, desde lo básico hasta problemas estilo LeetCode/Codeforces/HackerRank. Cada tema tiene un archivo de teoría con ejemplos funcionales y ejercicios vacíos con instrucciones detalladas.
 

@@ -18,6 +18,10 @@ Estructura de la guía
 - Bloques temáticos: teoría mínima, equivalencia Java→C++, ejercicios propuestos.
 - En la siguiente fase (otro prompt) resolveremos ejercicios uno por uno con teoría en comentarios y comparaciones con Java.
 
+Carpetas del repo
+- cpp/ -> teoria y ejercicios de C++
+- algoritmos/ -> teoria y ejercicios de algoritmos
+
 ---
 
 1) Entorno y primeras compilaciones
@@ -146,6 +150,7 @@ Estructura de la guía
 - Los ejercicios están vacíos con instrucciones detalladas para que los resuelvas tú mismo.
 
 ESTRUCTURA DE LOS ARCHIVOS:
+Carpetas: cpp/ para C++ y algoritmos/ para algoritmos.
 - 01-09: Temas básicos (ya completados por ti)
 - 10_poo_basica.cpp: Teoría de clases, objetos, constructores, destructores
   * 10a_ejercicio_estudiante.cpp: Clase con vector de datos
@@ -165,6 +170,17 @@ ESTRUCTURA DE LOS ARCHIVOS:
   * 13a_ejercicio_calificaciones.cpp: Persistencia simple
   * 13b_ejercicio_agenda_archivo.cpp: CRUD con archivos
   * 13c_ejercicio_analizador_texto.cpp: Procesamiento de texto
+- 14_stl_algoritmos.cpp: Teoria de algoritmos STL y lambdas
+  * 14a_ejercicio_filtrar_transform.cpp: Filtrar, transformar y sumar
+  * 14b_ejercicio_estadisticas_stl.cpp: Estadisticas con STL
+- 15_excepciones.cpp: Teoria de try/catch y errores comunes
+  * 15a_ejercicio_division_segura.cpp: Division con excepciones
+  * 15b_ejercicio_archivo_seguro.cpp: Lectura segura de archivos
+- 16_templates.cpp: Teoria de templates
+  * 16a_ejercicio_maximo_template.cpp: Maximo generico en vector
+  * 16b_ejercicio_par_template.cpp: Clase Par<T1, T2>
+- 17_sobrecarga_operadores.cpp: Teoria de operadores en clases
+  * 17a_ejercicio_fraccion.cpp: Fracciones con operadores
 
 - Evitar using namespace std; en proyectos.
 
